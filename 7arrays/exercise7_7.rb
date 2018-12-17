@@ -22,3 +22,12 @@ end
 
 p array_2
 p new_array_2
+
+# Alternative2:
+array2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+new_array2 = []
+array2.each do |number|
+  new_array2 = new_array2.push(number + 2)
+end
+p array2
+p new_array2

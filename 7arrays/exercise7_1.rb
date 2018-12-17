@@ -25,3 +25,10 @@ arr.each_with_index do |num, index|
     puts "Array: #{arr} does include #{number}!!"
   end
 end
+
+# Alternative3:
+for number in arr do
+  if number == 3
+    puts "#{arr} contains #{number}"
+  end
+end
