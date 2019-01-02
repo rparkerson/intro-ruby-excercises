@@ -33,3 +33,35 @@ key_array = [:email, :address, :phone]
 contact_data.first.each do |data|
   contacts["Joe Smith"][key_array.shift] = data
 end
+
+# Alternative
+contact_data = [["joe@email.com", "123 Main st.", "555-123-4567"],
+        ["sally@email.com", "404 Not Found Dr.", "123-234-3454"]]
+contacts = {"Joe Smith" => {}, "Sally Johnson" => {}}
+key_array = [:email, :address, :phone]
+
+contact_data[0].each do |index|
+  element = { keys.shift => index }
+  contacts["Joe Smith"].merge!(element)
+end
+
+# Alternative with bonus 
+
+contact_data = [["joe@email.com", "123 Main st.", "555-123-4567"],
+         ["sally@email.com", "404 Not Found Dr.", "123-234-3454"]]
+contacts = {"Joe Smith" => {}, "Sally Johnson" => {}}
+keys = [:email, :address, :phone, :email, :address, :phone]
+x = 0
+
+contact_data.flatten.each do |index|
+  if x < 3
+    element = { keys.shift => index }
+    contacts["Joe Smith"].merge!(element)
+    x += 1 
+  else 
+    element = { keys.shift => index }
+    contacts["Sally Johnson"].merge!(element)
+  end
+end
+
+p contacts
