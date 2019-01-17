@@ -57,3 +57,23 @@ puts "Please enter a number between 0 and 100"
 number = gets.chomp.to_i
 
 evaluate_nu(number) 
+
+# Alternative 3 - using infinite ranges
+
+puts 'Input number between 0 and 100'
+number = gets.to_i
+
+def number_eval(number)
+  case number
+  when -Float::INFINITY..0
+    puts 'Pick a positive number please'
+  when 0..50
+    puts 'Your number is between 0 and 50'
+  when 51..100
+    puts 'Your number is between 0 and 100'
+  when 101..nil
+    puts 'Your number is greater than 100'
+  end
+end
+
+number_eval(number)
